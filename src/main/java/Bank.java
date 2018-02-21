@@ -8,9 +8,14 @@
  * @see <a href="https://cs125.cs.illinois.edu/lab/8/">Lab 8 Description</a>
  */
 public class Bank {
+    /**
+     * Initializes name of bank.
+     */
+    private String bankName;
 
-    public String bankName;
-
+    /**
+     * makes bank account object.
+     */
     public Bank() {
         bankName = "Illini Bank";
     }
@@ -26,9 +31,8 @@ public class Bank {
      * @return boolean
      */
     public boolean withdrawMoney(final BankAccount bankAccount, final double amount) {
-        /*
-         * Implement this function
-         */
+        double balance = bankAccount.getBalance();
+        return (balance - amount) > 0;
     }
 
     /**
@@ -79,16 +83,18 @@ public class Bank {
          */
     }
 
-    public static int totalAccounts = 0;
+    /**
+     * Account tracker.
+     */
+
+    private static int totalAccounts = 0;
     /**
      * Uses static variable to get number of bank accounts opened.
      *
      * @return the total number of accounts
      */
     public static int getNumberOfAccount() {
-        /*
-         * Implement this function
-         */
+        return totalAccounts;
     }
 
     /**
